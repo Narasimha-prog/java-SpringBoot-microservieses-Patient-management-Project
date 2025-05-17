@@ -1,0 +1,14 @@
+### POST creates a new Patient Entity
+POST http://localhost:4000/patients
+Content-Type: application/json
+
+
+{
+  "patientName": "Ramesh2",
+  "patientEmail": "ventakareddy2@gmail.com",
+  "patientAddress": "baptla",
+  "patientDateOfBirth": "1990-05-24",
+  "patientRegisteredDate": "2025-02-23"
+}
+
+###
