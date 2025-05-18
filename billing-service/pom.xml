@@ -112,6 +112,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <finalName>billing-service</finalName>
     </build>
 
 
