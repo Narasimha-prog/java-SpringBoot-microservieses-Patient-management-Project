@@ -5,12 +5,31 @@
    cloud:
      gateway:
        routes:
+
+            #REST CLIENT http://localhost:4004/auth/login
+            #GATEWAY CLIENT http://auth-service:4005/login
+
+       -  id: auth-service-route
+          uri: http://auth-service:4005
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+       - id: auth-api-doc-route
+         uri: http://auth-service:4005
+         predicates:
+           - Path=/api-docs/auth
+         filters:
+           - RewritePath=/api-docs/auth,/v3/api-docs
+
+
        -   id: patient-service-route
            uri: http://patient-service:4000
            predicates:
              - Path=/api/patients/**
            filters:
             - StripPrefix=1
+            - JwtValidation
 
               #REST CLIENT http://localhost:4004/api/patients
               #GATEWAY CLIENT http://patient-service:4000/patients
