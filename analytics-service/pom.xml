@@ -87,6 +87,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>analytics-service</finalName>
 	</build>
 
 </project>

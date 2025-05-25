@@ -1,11 +1,12 @@
 ### POST creates a new Patient Entity
-POST http://localhost:4000/patients
+POST http://lb-8e404bb6.elb.localhost.localstack.cloud:4004/api/patients
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 
 {
-  "patientName": "Ramwh9 creat patient event",
-  "patientEmail": "ventakareddy2009@gmail.com",
+  "patientName": "Ramwh10 creat patient event",
+  "patientEmail": "ventakareddy20091@gmail.com",
   "patientAddress": "baptla",
   "patientDateOfBirth": "1990-05-24",
   "patientRegisteredDate": "2025-02-23"
